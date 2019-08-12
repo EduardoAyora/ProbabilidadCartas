@@ -42,8 +42,8 @@ public class Barajar {
             mano.add(mazoMesa.get(posicionCarta));
             mazoMesa.remove(posicionCarta);
         }
-        System.out.println(mano);
-        System.out.println(mazoMesa);
+        //System.out.println(mano);
+        //System.out.println(mazoMesa);
     }
     
 }

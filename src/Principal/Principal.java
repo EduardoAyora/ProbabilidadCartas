@@ -23,10 +23,10 @@ public class Principal {
 
         Barajar barajar = new Barajar();
         Cuenta cuenta = new Cuenta();
-
-        int cf = 0;
-        int ct = 3;
-
+        
+        double cf = 0; //Cuentas a favor, dejar en cero
+        double ct = 1000000; //Total de repeticiones
+        
         for (int i = 0; i < ct; i++) {
             List<Carta> mazoMesa = new ArrayList<>();
             List<Carta> mano = new ArrayList<>();
@@ -41,8 +41,8 @@ public class Principal {
                 cf++;
             }
         }
-
-        System.out.println(cf);
+        
+        //System.out.println(cf);
         double prob = cf / ct;
         prob *= 100;
 

@@ -45,7 +45,6 @@ public class CartaRepetida {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
-            this.repeticion++;
             return true;
         }
         if (obj == null) {
@@ -58,11 +57,13 @@ public class CartaRepetida {
         if (this.numero != other.numero) {
             return false;
         }
-        System.out.println("se repite");
-        this.repeticion++;
+        other.repeticion++;
         return true;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "CartaRepetida{" + "numero=" + numero + ", repeticion=" + repeticion + '}';
+    }
     
 }

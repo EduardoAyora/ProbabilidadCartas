@@ -25,9 +25,11 @@ public class Cuenta {
             CartaRepetida cartaRepetida = new CartaRepetida(numero);
             repetidas.add(cartaRepetida);
         }
+        //System.out.println("Cartas repetidas: ");
+        //System.out.println(repetidas);
         for(CartaRepetida cartaRepetida : repetidas){
-            System.out.println(cartaRepetida.getRepeticion());
-            if(cartaRepetida.getRepeticion() == 2){
+            //System.out.println(cartaRepetida.getRepeticion());
+            if(cartaRepetida.getRepeticion() == 4){
                 return true;
             }
         }
