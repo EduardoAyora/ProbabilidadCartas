@@ -20,29 +20,33 @@ public class Principal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        List<Carta> robar = new ArrayList<>();
-        
-        /*Para Rumiiiiiii
-        for(int i = 1; i < 5; i++){
-            for(int j = 1; j < 8; j++){
-                Carta carta = new Carta(j, i);
-                robar.add(carta);
-            }
-            for(int j = 11; j < 14; j++){
-                Carta carta = new Carta(j, i);
-                robar.add(carta);
-            }
-        }*/
-        
-        for(int i = 1; i < 5; i++){
-            for(int j = 1; j < 14; j++){
-                Carta carta = new Carta(j, i);
-                robar.add(carta);
+
+        Barajar barajar = new Barajar();
+        Cuenta cuenta = new Cuenta();
+
+        int cf = 0;
+        int ct = 3;
+
+        for (int i = 0; i < ct; i++) {
+            List<Carta> mazoMesa = new ArrayList<>();
+            List<Carta> mano = new ArrayList<>();
+            //Baraja llena
+            barajar.rellenarPoker(mazoMesa);
+
+            //Rellenando mano
+            barajar.repartirJugador(mazoMesa, mano);
+            
+            //Verificar si hay dos repetidas
+            if (cuenta.repeticiones(mano)) {
+                cf++;
             }
         }
-        System.out.println(robar);
-        
-        
+
+        System.out.println(cf);
+        double prob = cf / ct;
+        prob *= 100;
+
+        System.out.println("Probabilidad : " + prob);
     }
-    
+
 }
