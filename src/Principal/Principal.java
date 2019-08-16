@@ -20,24 +20,26 @@ public class Principal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
+        
         Barajar barajar = new Barajar();
-        Cuenta cuenta = new Cuenta();
+        
         
         double cf = 0; //Cuentas a favor, dejar en cero
         double ct = 1000000; //Total de repeticiones
         
         for (int i = 0; i < ct; i++) {
+            Cuenta cuenta = new Cuenta();
             List<Carta> mazoMesa = new ArrayList<>();
             List<Carta> mano = new ArrayList<>();
             //Baraja llena
             barajar.rellenarPoker(mazoMesa);
-
+            
             //Rellenando mano
             barajar.repartirJugador(mazoMesa, mano);
             
             //Verificar si hay dos repetidas
-            if (cuenta.repeticiones(mano)) {
+            cuenta.rellenarRepetidas(mano);
+            if (cuenta.repeticiones()) {
                 cf++;
             }
         }

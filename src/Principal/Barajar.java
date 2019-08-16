@@ -25,11 +25,7 @@ public class Barajar {
     
     public void rellenarRumi(List<Carta> mazoMesa){
         for(int i = 1; i < 5; i++){
-            for(int j = 1; j < 8; j++){
-                Carta carta = new Carta(j, i);
-                mazoMesa.add(carta);
-            }
-            for(int j = 11; j < 14; j++){
+            for(int j = 1; j < 11; j++){
                 Carta carta = new Carta(j, i);
                 mazoMesa.add(carta);
             }

@@ -18,21 +18,58 @@ import java.util.Set;
  */
 public class Cuenta {
     
-    public boolean repeticiones(List<Carta> mano){
-        Set<CartaRepetida> repetidas = new HashSet<>();
+    private List<CartaRepetida> repetidas;
+
+    public Cuenta() {
+        repetidas = new ArrayList<>();
+    }
+    
+    
+    
+    public void rellenarRepetidas(List<Carta> mano){
+        Set<CartaRepetida> repetidasLargo = new HashSet<>();
         for(int i = 0; i < mano.size(); i++){
             int numero = mano.get(i).getNumero();
             CartaRepetida cartaRepetida = new CartaRepetida(numero);
-            repetidas.add(cartaRepetida);
+            repetidasLargo.add(cartaRepetida);
         }
-        //System.out.println("Cartas repetidas: ");
+        //System.out.println("Largo: " + repetidasLargo);------
+        for(CartaRepetida cartaRepetida : repetidasLargo){
+            if(cartaRepetida.getRepeticion() > 1){
+                repetidas.add(cartaRepetida);
+            }
+        }
+    }
+    
+    public boolean repeticiones(){
+        //System.out.println("Cartas repetidas: ");----
         //System.out.println(repetidas);
         for(CartaRepetida cartaRepetida : repetidas){
             //System.out.println(cartaRepetida.getRepeticion());
-            if(cartaRepetida.getRepeticion() == 4){
+            if(cartaRepetida.getRepeticion() == 3){
                 return true;
             }
         }
+        return false;
+    }
+    
+    //Clasificar primero ordenando por palo y de menor a mayor, luego hacer escalera, no repetir los juegos.
+    public boolean escalera(List<Carta> mano){
+        int a = 0;
+        int b = 0;
+        
+        for(int i = 0; i < 2; i++){
+            if(i == 0){
+                
+            }else{
+                
+            }
+        }/*
+        for(int i = 0; i < mano.size(); i++){
+            if(mano.ge){
+                
+            }
+        }*/
         return false;
     }
     
